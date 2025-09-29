@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int A, B, C;
+
+    // Read three space-separated integers
+    scanf("%d %d %d", &A, &B, &C);
+
+    int largest = A;  // Assume A is largest initially
+
+    if (B > largest) {
+        largest = B;
+    }
+
+    if (C > largest) {
+        largest = C;
+    }
+
+    printf("%d\n", largest);
+
+    return 0;
+}
