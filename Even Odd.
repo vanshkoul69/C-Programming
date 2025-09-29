@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+
+    // Read the integer input
+    scanf("%d", &N);
+
+    // Check if the number is divisible by 2
+    if (N % 2 == 0) {
+        printf("Even\n");
+    } else {
+        printf("Odd\n");
+    }
+
+    return 0;
+}
