@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+
+    int denominations[] = {500, 100, 50, 20, 10, 5, 2, 1};
+    int count;
+    
+    for (int i = 0; i < 8; i++) {
+        count = N / denominations[i];
+        if (count > 0) {
+            printf("%d: %d\n", denominations[i], count);
+            N %= denominations[i];
+        }
+    }
+
+    return 0;
+}
