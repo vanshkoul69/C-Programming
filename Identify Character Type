@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    char ch;
+
+    // Read a single character input
+    scanf("%c", &ch);
+
+    // Check if Alphabet (A-Z or a-z)
+    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+        printf("Alphabet\n");
+    }
+    // Check if Digit (0-9)
+    else if (ch >= '0' && ch <= '9') {
+        printf("Digit\n");
+    }
+    // Otherwise, Symbol
+    else {
+        printf("Symbol\n");
+    }
+
+    return 0;
+}
