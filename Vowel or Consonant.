@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    char ch;
+
+    // Read a single character input
+    scanf("%c", &ch);
+
+    // Check if the character is an alphabet (A-Z or a-z)
+    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+        // Convert uppercase vowels to lowercase by checking directly
+        if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' ||
+            ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+            printf("Vowel\n");
+        } else {
+            printf("Consonant\n");
+        }
+    } else {
+        printf("Invalid Input\n");
+    }
+
+    return 0;
+}
