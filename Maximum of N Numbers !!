@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int N, num, max;
+
+    // Read the total count of numbers
+    scanf("%d", &N);
+
+    // Read the first number and initialize max
+    scanf("%d", &max);
+
+    // Loop for the remaining N-1 numbers
+    for (int i = 1; i < N; i++) {
+        scanf("%d", &num);
+        if (num > max) {
+            max = num;
+        }
+    }
+
+    // Output the maximum number
+    printf("%d\n", max);
+
+    return 0;
+}
