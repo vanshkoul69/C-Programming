@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h> // for abs()
+
+int main() {
+    int N;
+    scanf("%d", &N);
+
+    int isNegative = 0;
+    if (N < 0) {
+        isNegative = 1;
+        N = abs(N); // Make positive for processing
+    }
+
+    int num = N;
+    int digits = 0;
+
+    // Count digits
+    while (num > 0) {
+        num /= 10;
+        digits++;
+    }
+
+    if (digits == 1) {
+        // Only one digit, no swap needed
+        printf("%d\n", isNegative ? -N : N);
+        return 0;
+    }
+
+    int last_digit = N % 10;
+    int first_digit = N / (int)pow(10, digits - 1);
+
+    // Remove first and last digits from N
+    int middle_part = (N % (int)pow(10, digits - 1)) / 10;
+
+    // Construct the new number: last_digit + middle_part + first_digit
+    int new_number = last_digit * (int)pow(10, digits - 1) + middle_part * 10 + first_digit;
+
+    if (isNegative)
+        new_number *= -1;
+
+    printf("%d\n", new_number);
+
+    return 0;
+}
