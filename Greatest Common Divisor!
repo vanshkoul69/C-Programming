@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+// Function to compute HCF using Euclidean algorithm
+int computeHCF(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    int a, b;
+
+    // Read two integers from input
+    scanf("%d %d", &a, &b);
+
+    // Handle negative inputs by converting to positive
+    if (a < 0) a = -a;
+    if (b < 0) b = -b;
+
+    int hcf = computeHCF(a, b);
+
+    // Print the result
+    printf("%d\n", hcf);
+
+    return 0;
+}
