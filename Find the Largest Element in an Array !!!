@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int N, i;
+    
+    // Read the number of elements
+    scanf("%d", &N);
+    
+    int arr[N];
+    
+    // Read the array elements
+    for (i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    // Initialize the largest element as the first element
+    int largest = arr[0];
+    
+    // Find the largest element
+    for (i = 1; i < N; i++) {
+        if (arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+    
+    // Print the largest element
+    printf("%d\n", largest);
+    
+    return 0;
+}
