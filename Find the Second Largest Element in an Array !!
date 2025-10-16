@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <limits.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+
+    int arr[N];
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int largest = INT_MIN;
+    int second_largest = INT_MIN;
+
+    for (int i = 0; i < N; i++) {
+        if (arr[i] > largest) {
+            second_largest = largest;
+            largest = arr[i];
+        } else if (arr[i] > second_largest && arr[i] < largest) {
+            second_largest = arr[i];
+        }
+    }
+
+    if (second_largest == INT_MIN) {
+        // Means no second largest element found (all elements equal or single unique element)
+        printf("No second largest element\n");
+    } else {
+        printf("%d\n", second_largest);
+    }
+
+    return 0;
+}
