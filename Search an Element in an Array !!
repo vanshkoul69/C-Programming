@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int N, key, i, position = -1;
+    
+    // Read the number of elements
+    scanf("%d", &N);
+    
+    int arr[N];
+    
+    // Read the array elements
+    for (i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    // Read the key to search for
+    scanf("%d", &key);
+    
+    // Search for the key in the array
+    for (i = 0; i < N; i++) {
+        if (arr[i] == key) {
+            position = i + 1;  // 1-based index
+            break;
+        }
+    }
+    
+    // Print the result
+    if (position != -1) {
+        printf("Element found at position %d\n", position);
+    } else {
+        printf("Element not found\n");
+    }
+    
+    return 0;
+}
