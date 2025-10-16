@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int N, key, i, count = 0;
+    
+    // Read the number of elements
+    scanf("%d", &N);
+    
+    int arr[N];
+    
+    // Read the array elements
+    for (i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    // Read the key to count frequency of
+    scanf("%d", &key);
+    
+    // Count the frequency of the key in the array
+    for (i = 0; i < N; i++) {
+        if (arr[i] == key) {
+            count++;
+        }
+    }
+    
+    // Print the frequency
+    printf("%d\n", count);
+    
+    return 0;
+}
