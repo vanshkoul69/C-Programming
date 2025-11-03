@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    
+    // Read the number of elements
+    scanf("%d", &N);
+    
+    int arr[N];
+    
+    // Read array elements
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    // Sort array in ascending order using simple bubble sort
+    for (int i = 0; i < N - 1; i++) {
+        for (int j = 0; j < N - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Swap arr[j] and arr[j + 1]
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    
+    // Print sorted array
+    for (int i = 0; i < N; i++) {
+        printf("%d", arr[i]);
+        if (i < N - 1) printf(" ");
+    }
+    
+    return 0;
+}
