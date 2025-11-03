@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    
+    // Read number of elements
+    scanf("%d", &N);
+    
+    int arr[N];
+    
+    // Read array elements
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int visited[N];
+    for (int i = 0; i < N; i++) {
+        visited[i] = 0; // Initialize all as unvisited
+    }
+
+    int uniqueCount = 0; // To track how many unique elements remain
+
+    // Remove duplicates
+    for (int i = 0; i < N; i++) {
+        if (visited[i] == 1)
+            continue; // Skip already marked duplicates
+
+        // Mark duplicates of arr[i]
+        for (int j = i + 1; j < N; j++) {
+            if (arr[i] == arr[j]) {
+                visited[j] = 1;
+            }
+        }
+
+        // Print element (only first occurrence)
+        if (uniqueCount > 0)
+            printf(" ");
+        printf("%d", arr[i]);
+        uniqueCount++;
+    }
+
+    // If no elements remain (in case all were duplicates)
+    if (uniqueCount == 0) {
+        printf("No elements left");
+    }
+
+    return 0;
+}
